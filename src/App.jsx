@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 import ProductDetails from "./pages/ProductDetails";
+import { loader } from "./pages/ProductDetails";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -19,7 +20,11 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="profile" element={<Profile />} />
-        <Route path="details/:id" element={<ProductDetails />} />
+        <Route
+          path="details/:id"
+          element={<ProductDetails />}
+          loader={loader}
+        />
         <Route path="*" element={<NotFound />} />
       </Route>
     )
