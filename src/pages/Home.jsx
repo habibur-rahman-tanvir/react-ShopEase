@@ -6,7 +6,7 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const res = await fetch("https://dummyjson.com/products?limit=30");
+      const res = await fetch("https://dummyjson.com/products?limit=100");
       const data = await res.json();
       setData(data);
     } catch (err) {
@@ -20,10 +20,10 @@ const Home = () => {
 
   return (
     <div>
-      <div className="bg-white m-1 shadow shadow-black text-center rounded">
+      <div className="m-1 text-center bg-white rounded shadow shadow-black">
         Filter Bar
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data.products?.length > 0
           ? data.products.map((item) => <Cart key={item.id} item={item} />)
           : "Loading"}

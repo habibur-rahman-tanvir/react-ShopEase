@@ -14,16 +14,15 @@ const Cart = ({ item }) => {
       className="p-4 transition-all duration-300 hover:shadow-md hover:shadow-black bg-white rounded-lg shadow-md min-w-[220px] max-w-[300px] w-full"
     >
       <img src={item.thumbnail} alt={item.title} />
-      <p>{item.title}</p>
+      <p className="font-semibold text-gray-800 ">{item.title}</p>
       <div>
-        <span className="text-red-600 text-xl font-semibold">
+        <span className="text-xl font-semibold text-red-600">
           ${item.price}{" "}
         </span>
         <span className="text-gray-500">-{item.discountPercentage}%</span>
-
-        <div className="flex items-center space-x-1 mt-1">
+        <div className="flex items-center mt-1 space-x-1">
           <Ratingbar rating={item.rating} />
-          <span className="text-sm text-gray-600 ml-1">({item.rating})</span>
+          <span className="ml-1 text-sm text-gray-600">({item.rating})</span>
         </div>
       </div>
     </div>
