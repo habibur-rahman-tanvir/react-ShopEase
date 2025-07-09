@@ -14,7 +14,7 @@ const renderStars = (rating, maxRating) => {
   return stars;
 };
 
-const Ratingbar = ({ rating = 5, maxRating = 5 }) => {
+const Ratingbar = ({ rating = 0, maxRating = 5 }) => {
   return <span className="flex gap-0.5">{renderStars(rating, maxRating)}</span>;
 };
 
